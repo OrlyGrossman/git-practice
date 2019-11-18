@@ -4,7 +4,7 @@ console.log('hi I am new file')
 //input form exercise
 const validate= function(){
   console.log("in the function")
-  const name=document.getElementById("name").value
+  const name=document.getElementById("name").value 
   console.log(name)
   const salary=document.getElementById("salary").value||null
   console.log(salary)
@@ -12,25 +12,59 @@ const validate= function(){
   console.log(birthday)
   const phone=document.getElementById("phone").value||null
   console.log(phone)
-  if(name.length<2){
-    console.log("invalid name")
+
+  const comments= {
+    missingName:"",
+    shortName:"",
+    salary:"",
+    phone:"",
+    birthday:""
+
   }
-  if((salary<10000) || (salary>16000)){
-    console.log("invalid salary")
+  if (name==""){
+    console.log("please enter your name")
+    missingNameComment=document.createElement("div")
+    missingNameComment.innerHTML=("please enter your name")
+    document.body.appendChild(missingNameComment)
+  }
+  
+  if (name.length<3 && name.length>0){
+    console.log("invalid name")
+    shortNameComment=document.createElement("div")
+    shortNameComment.innerHTML=("Invalid name")
+    document.body.appendChild(shortNameComment)
+    
   }
 
-  if (birthday==null){
-    console.log ("please enter your birthday")
-  }
+  if((salary<10000) || (salary>16000) || (salary==null)){
+    console.log("invalid salary")
+    salaryComment=document.createElement("div")
+    salaryComment.innerHTML=("Invalid salary")
+    document.body.appendChild(salaryComment)
+    }
 
   if(phone==null){
     console.log("phone number is missing")
+    noPhoneComment=document.createElement("div")
+    noPhoneComment.innerHTML=("phone number is missing")
+    document.body.appendChild(noPhoneComment)
   }
   else if((phone.length<10)){
     console.log("invalid phone number")
-  }
-}
+    phoneComment=document.createElement("div")
+    phoneComment.innerHTML=("Invalid phone number")
+    document.body.appendChild(phoneComment)
 
+  }
+
+  if (birthday==null){
+    console.log("birthday should not be null")
+    birthdayComment=document.createElement("div")
+    birthdayComment.innerHTML=("please enter valid date")
+    document.body.appendChild(birthdayComment)
+  }
+
+}
 // color changing form exercise 
 // const getRandomColor = function() {
 //     const niceColors = ["#8e44ad", "#3498db", "#c0392b", "#f1c40f", "#d35400", "#2ecc71", "#1abc9c", "#2c3e50", "#7f8c8d"]
@@ -69,21 +103,19 @@ const validate= function(){
 //     Ted: true 
 //   }
   
-//   const nameInput = function(){
-//       const firstName=document.getElementById("inputBox").value
-//       const newItem=document.createElement("div")
-//       console.log(firstName)
-//       console.log (reservations[firstName])
-//       if (reservations[firstName]==true){
-//          console.log("I am inside")
-//          newItem.value=firstName
-//          console.log(document.getElementById("myOutput"))
-//          document.getElementById("myOutput").append("Welcome "+newItem.value+ " Your room is ready")
-//       }
-//      else {
-//          newItem.value=firstName
-//          document.getElementById("myOutput").append("Go Away  "+newItem.value+ " You are not welcome")
-
-//      }
-              
-//   }
+  // const nameInput = function(){
+  //     const firstName=document.getElementById("inputBox").value
+  //     const newItem=document.createElement("div")
+  //     console.log(firstName)
+  //     console.log (reservations[firstName])
+  //     if (reservations[firstName]==true){
+  //        console.log("I am inside")
+  //        newItem.value=firstName
+  //        console.log(document.getElementById("myOutput"))
+  //        document.getElementById("myOutput").append("Welcome "+newItem.value+ " Your room is ready")
+  //     }
+  //    else {
+  //        newItem.value=firstName
+  //        document.getElementById("myOutput").append("Go Away  "+newItem.value+ " You are not welcome")
+  //    }
+  // }
