@@ -64,6 +64,8 @@ const validate= function(){
     document.body.appendChild(birthdayComment)
   }
 
+  
+
 }
 // color changing form exercise 
 // const getRandomColor = function() {
